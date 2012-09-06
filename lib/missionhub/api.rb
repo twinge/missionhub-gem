@@ -4,7 +4,6 @@ require 'httparty'
 module MissionHub
   class API
     include HTTParty
-    debug_output
 
     @access_token = ''
 
@@ -16,7 +15,7 @@ module MissionHub
       options = {:body => { :grant_type => 'none', :client_id => MissionHub.client_id, :client_secret => MissionHub.client_secret } }
       response = self.class.post('/oauth/access_token', options)
       raise 'invalid client' if response.parsed_response['access_token'].nil?
-      truea
+      true
     end
   end
 end

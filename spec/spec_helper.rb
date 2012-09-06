@@ -25,9 +25,9 @@ MissionHub.config do |c|
 end
 
 #VCR config
+
 VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/missionhub_cassettes'
-  c.stub_with :webmock
+  c.cassette_library_dir = 'spec/cassettes'
 end
 
 

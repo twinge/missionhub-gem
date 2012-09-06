@@ -1,8 +1,4 @@
-# MissionHub Ruby Gem
-
-[![Build Status](https://secure.travis-ci.org/Godmedia/missionhub-gem.png)](http://travis-ci.org/Godmedia/missionhub-gem)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/Godmedia/missionhub-gem)
-
+# MissionHub Ruby Gem[![Build Status](https://secure.travis-ci.org/Godmedia/missionhub-gem.png)](http://travis-ci.org/Godmedia/missionhub-gem)[![Dependency Status](https://gemnasium.com/Godmedia/missionhub-gem.png)](https://gemnasium.com/Godmedia/missionhub-gem)[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/Godmedia/missionhub-gem)
 Consume the MissionHub API easily with this Ruby Gem
 
 ## Installation
@@ -33,11 +29,9 @@ TODO: Write usage instructions here
 
 ##License
 
-== LICENSE:
-
 (The MIT License)
 
-Copyright (c) Tataihono Nikora, GodMedia
+Copyright (c) 2012 Tataihono Nikora, GodMedia
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
