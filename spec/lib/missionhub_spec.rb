@@ -3,7 +3,7 @@ require_relative '../spec_helper'
 describe MissionHub do
 
   it "must have the base url set to the MissionHub API" do
-    MissionHub.base_uri.must_equal 'https://www.missionhub.com/'
+    MissionHub.base_uri.must_equal 'http://www.missionhub.com/'
   end
 
   it "must have a defined client id" do

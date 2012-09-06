@@ -13,29 +13,24 @@ describe MissionHub::API do
   describe "Authentication" do
 
     let(:api) { MissionHub::API.new }
-/
-    before do
-      VCR.insert_cassette 'auth', :record => :new_auth
-    end
 
-    after do
-      VCR.eject_cassette
-    end
-/
     it "must have a auth method" do
       api.must_respond_to :auth
     end
 
-    /it "must fail authentication gracefully" do
+    it "must fail authentication gracefully" do
+      VCR.insert_cassette 'auth_fail', :record => :new_episodes
       temp = MissionHub.client_secret
       MissionHub.client_secret = ''
-      true.must_equal true
-      #@api.auth.must_raise 'invalid client'
+      api.auth.must_equal false
       MissionHub.client_secret = temp
-    end/
+      VCR.eject_cassette
+    end
 
     it "must authenticate properly" do
+      VCR.insert_cassette 'auth_success', :record => :new_episodes
       api.auth.must_equal true
+      VCR.eject_cassette
     end
 
   end

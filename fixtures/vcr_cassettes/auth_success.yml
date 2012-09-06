@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.missionhub.com/oauth/access_token
+    body:
+      encoding: US-ASCII
+      string: grant_type=none&client_id=6&client_secret=5b1913aa85720d7ede99dac1ad35fbf40bbc4490d9da0df346877832469daeb2
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.0.14
+      Date:
+      - Thu, 06 Sep 2012 09:27:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.15
+      Cache-Control:
+      - no-store
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"a23eb7351bcee0923d96bfdf79b3105e"'
+      X-Request-Id:
+      - 34de8f52e8b55eaf680bb4264be5f41b
+      X-Runtime:
+      - '0.016247'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ! '{"access_token":"53b592bf29643de3c1496825f83d32651cad9297a6496cb7ef46ab25f0d8831e","scope":"contacts,userinfo,contact_assignment,followup_comments,roles,organization_info"}'
+    http_version: 
+  recorded_at: Thu, 06 Sep 2012 09:26:39 GMT
+recorded_with: VCR 2.2.4
