@@ -1,4 +1,91 @@
-module Missionhub
+require 'resolv'
+
+module MissionHub
   class Person
+    attr_accessor :current_address_attributes, :phone_number, :email_address, :gender, :firstName, :lastName, :answers
+
+    #align variable naming with MissionHub API
+    alias :first_name= :firstName=
+    alias :first_name :firstName
+
+    alias :last_name= :lastName=
+    alias :last_name :lastName
+
+    alias :address :current_address_attributes
+
+    def address=(address)
+      raise "Address must be a MissionHub::Person::Address" unless address.kind_of? MissionHub::Person::Address
+      @current_address_attributes = address
+    end
+
+    def set_answer(id, message)
+      if @answers.nil?
+        @answers = Hash.new
+      end
+
+      if message.is_a?(String) or message.is_a?(Hash)
+        if
+        @answers[id] = message
+      else
+        raise "Invalid type for answer"
+      end
+    end
+
+    def get_answer(id)
+      @answers[id]
+    end
+
+    def current_address_attributes=(address)
+      raise "Address must be a MissionHub::Person::Address" unless address.kind_of? MissionHub::Person::Address
+      @current_address_attributes = address
+    end
+
+    def email_address=(email)
+      unless email.empty?
+        unless email =~ /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/
+            raise "Email does not appear to be valid format"
+        else
+            raise "Email domain name appears to be incorrect" unless validate_email_domain(email)
+            @email_address = email
+        end
+      else
+        raise "Email appears to be empty"
+      end
+    end
+
+    def gender=(gender)
+      if gender == "male" or gender == "female"
+        @gender = gender
+      else
+        raise "Gender must be either male or female"
+      end
+    end
+
+    def validate_email_domain(email)
+      domain = email.match(/\@(.+)/)[1]
+      Resolv::DNS.open do |dns|
+        @mx = dns.getresources(domain, Resolv::DNS::Resource::IN::MX)
+      end
+      @mx.size > 0 ? true : false
+    end
+
+    def full_name
+      @firstName + " " + @lastName
+    end
+
+    def hash
+      hash_to_return = {}
+      self.instance_variables.each do |var|
+        temp = self.instance_variable_get(var)
+        if not temp.nil? and var.to_s != "@mx"
+          if not temp.kind_of? MissionHub::Person::Address
+            hash_to_return[var.to_s.gsub("@","")] = temp
+          else
+            hash_to_return[var.to_s.gsub("@","")] = temp.hash
+          end
+        end
+      end
+      return hash_to_return
+    end
   end
 end

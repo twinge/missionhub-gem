@@ -14,4 +14,8 @@ describe MissionHub do
     MissionHub.client_secret.wont_be_empty
   end
 
+  it "must have a defined organization id" do
+    MissionHub.org_id.wont_be_nil
+  end
+
 end

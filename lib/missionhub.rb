@@ -5,7 +5,7 @@ end
 module MissionHub
   extend self
 
-  attr_accessor :client_id, :client_secret, :base_uri
+  attr_accessor :client_id, :client_secret, :base_uri, :org_id
 
   # And we define a wrapper for the configuration block, that we'll use to set up
   # our set of options

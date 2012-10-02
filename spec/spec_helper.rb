@@ -18,8 +18,9 @@ end
 MissionHub.config do |c|
   # :outline  - turn's original case/test outline mode [default]
   c.base_uri = 'http://www.missionhub.com/'
-  c.client_id = 6
-  c.client_secret = '5b1913aa85720d7ede99dac1ad35fbf40bbc4490d9da0df346877832469daeb2'
+  c.client_id = 12
+  c.client_secret = '83f84763001c1fb4ce96adc4908b9ba285b510d6'
+  c.org_id = 5522
 end
 
 #VCR config
