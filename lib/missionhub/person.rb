@@ -24,10 +24,13 @@ module MissionHub
       end
 
       if message.is_a?(String) or message.is_a?(Hash)
-        if
-        @answers[id] = message
+        if id.is_a?(Integer)
+          @answers[id] = message
+        else
+          raise "Invalid type for id"
+        end
       else
-        raise "Invalid type for answer"
+        raise "Invalid type for message"
       end
     end
 

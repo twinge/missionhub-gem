@@ -181,4 +181,136 @@ http_interactions:
         22:38:14 UTC","date_surveyed":"2012-10-02 22:38:14 UTC","organizational_roles":[]}'
     http_version: 
   recorded_at: Tue, 02 Oct 2012 22:37:48 GMT
+- request:
+    method: post
+    uri: http://www.missionhub.com/oauth/access_token
+    body:
+      encoding: US-ASCII
+      string: grant_type=none&client_id=12&client_secret=
+    headers: {}
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx/1.0.14
+      Date:
+      - Tue, 02 Oct 2012 23:12:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '400'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.15
+      Cache-Control:
+      - no-store
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - 91024aeaccf492cc12391d87befaa36b
+      X-Runtime:
+      - '0.004484'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":"invalid_client","error_description":"{\"error\": {\"message\":\"Client
+        ID and client secret do not match.\", \"code\": \"52\"}}"}'
+    http_version: 
+  recorded_at: Tue, 02 Oct 2012 23:11:21 GMT
+- request:
+    method: post
+    uri: http://www.missionhub.com/oauth/access_token
+    body:
+      encoding: US-ASCII
+      string: grant_type=none&client_id=12&client_secret=83f84763001c1fb4ce96adc4908b9ba285b510d6
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.0.14
+      Date:
+      - Tue, 02 Oct 2012 23:12:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.15
+      Cache-Control:
+      - no-store
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"8e7d0338744d5a62ee5c240f3f2ebb30"'
+      X-Request-Id:
+      - 399d5091e15a9b4621d55060d10b3f58
+      X-Runtime:
+      - '0.012341'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ! '{"access_token":"03a6f575b13657a0dad1b6ff07a099d9088fed26617758dd374b0c985a502a79","scope":"contacts,userinfo,contact_assignment,followup_comments,roles,organization_info"}'
+    http_version: 
+  recorded_at: Tue, 02 Oct 2012 23:11:22 GMT
+- request:
+    method: post
+    uri: http://www.missionhub.com/api/v2/contacts.json
+    body:
+      encoding: US-ASCII
+      string: person[firstName]=Test&person[lastName]=User&person[email_address]=mail%40google.com&person[gender]=female&person[current_address_attributes][address1]=123%20Somewhere%20St&person[current_address_attributes][address2]=Dept%202500&person[current_address_attributes][city]=Orlando&person[current_address_attributes][country]=US&person[current_address_attributes][state]=FL&person[current_address_attributes][zip]=32832&answers[4952]=Hello%20World&answers[4953]=R2&answers[4955]=D2&answers[4954][2]=C3&answers[4954][3]=C4&org_id=5522&user_id=1615180&access_token=03a6f575b13657a0dad1b6ff07a099d9088fed26617758dd374b0c985a502a79
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.0.14
+      Date:
+      - Tue, 02 Oct 2012 23:12:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.15
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"fa696d44203f05b4311fbf064e85e2d0"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _mh_session=76da570805214bd26bb6301dac676ad5; path=/; expires=Thu, 04-Oct-2012
+        23:12:05 GMT; HttpOnly
+      X-Request-Id:
+      - 2fecf45d93bc215c4e407a6c5cfa8ad0
+      X-Runtime:
+      - '5.431635'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ! '{"meta":{"request_time":1349219525},"error":"undefined method `user''
+        for nil:NilClass"}'
+    http_version: 
+  recorded_at: Tue, 02 Oct 2012 23:11:39 GMT
 recorded_with: VCR 2.2.5
