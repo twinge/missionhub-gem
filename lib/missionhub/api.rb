@@ -23,7 +23,7 @@ module MissionHub
     end
 
     def create_person(person)
-      raise "Not Authenticated" if @access_token.empty?
+      raise "Not Authenticated" if @access_token.nil?
       raise "Scope doesn't allow for contact creation" unless @scope.include?("contacts")
       raise "Peron must be a MissionHub::Person" unless person.kind_of? MissionHub::Person
       raise "First name must be set to create person" if person.first_name.nil?
@@ -36,7 +36,7 @@ module MissionHub
       if !response.parsed_response['error'].nil?
         raise response.parsed_response['error']
       else
-        response.parsed_response['id'].to_i
+        response
       end
     end
   end

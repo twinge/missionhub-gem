@@ -85,7 +85,7 @@ describe MissionHub::API do
       person.set_answer(4954, hash_answer)
       person.phone = "021021021"
       response = api.create_person(person)
-      response.must_be_instance_of Fixnum
+      response.must_be_instance_of Hash
     end
   end
 end
