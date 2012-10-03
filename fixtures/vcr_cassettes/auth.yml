@@ -5,49 +5,6 @@ http_interactions:
     uri: http://www.missionhub.com/oauth/access_token
     body:
       encoding: US-ASCII
-      string: grant_type=none&client_id=12&client_secret=83f84763001c1fb4ce96adc4908b9ba285b510d6
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.0.14
-      Date:
-      - Wed, 03 Oct 2012 22:39:16 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Status:
-      - '200'
-      X-Powered-By:
-      - Phusion Passenger (mod_rails/mod_rack) 3.0.15
-      Cache-Control:
-      - no-store
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"d0d53d93eea872825c2d3ddf4602b136"'
-      X-Request-Id:
-      - 349184278b44962580048593d664a0cc
-      X-Runtime:
-      - '0.021574'
-      X-Rack-Cache:
-      - invalidate, pass
-    body:
-      encoding: US-ASCII
-      string: ! '{"access_token":"b08f825c2543643e561ba92b296028c4de2887a17179269c311ba680a96574d6","scope":"contacts,userinfo,contact_assignment,followup_comments,roles,organization_info"}'
-    http_version:
-  recorded_at: Wed, 03 Oct 2012 22:38:06 GMT
-- request:
-    method: post
-    uri: http://www.missionhub.com/oauth/access_token
-    body:
-      encoding: US-ASCII
       string: grant_type=none&client_id=12&client_secret=
     headers: {}
   response:
@@ -58,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.0.14
       Date:
-      - Wed, 03 Oct 2012 22:39:17 GMT
+      - Wed, 03 Oct 2012 23:29:16 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -74,9 +31,9 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Request-Id:
-      - bc57010e2ca62e9c3ac610e8fd5f7444
+      - 7b1ff696190f4c801aff3c9d946d59ff
       X-Runtime:
-      - '0.052999'
+      - '0.004363'
       X-Rack-Cache:
       - invalidate, pass
     body:
@@ -84,13 +41,13 @@ http_interactions:
       string: ! '{"error":"invalid_client","error_description":"{\"error\": {\"message\":\"Client
         ID and client secret do not match.\", \"code\": \"52\"}}"}'
     http_version:
-  recorded_at: Wed, 03 Oct 2012 22:38:07 GMT
+  recorded_at: Wed, 03 Oct 2012 23:28:06 GMT
 - request:
     method: post
-    uri: http://www.missionhub.com/api/v2/contacts.json
+    uri: http://www.missionhub.com/oauth/access_token
     body:
       encoding: US-ASCII
-      string: person[firstName]=Test&person[lastName]=User&person[gender]=female&person[current_address_attributes][address1]=123%20Somewhere%20St&person[current_address_attributes][address2]=Dept%202500&person[current_address_attributes][city]=Orlando&person[current_address_attributes][country]=US&person[current_address_attributes][state]=FL&person[current_address_attributes][zip]=32832&person[email_address][email]=mail%40google.com&person[email_address][primary]=0&person[phone_number][number]=021021021&person[phone_number][primary]=0&person[phone_number][location]=mobile&answers[4952]=Hello%20World&answers[4953]=R2&answers[4955]=D2&answers[4954][2]=C3&answers[4954][3]=C4&org_id=5522&user_id=1615180&access_token=b08f825c2543643e561ba92b296028c4de2887a17179269c311ba680a96574d6
+      string: grant_type=none&client_id=12&client_secret=83f84763001c1fb4ce96adc4908b9ba285b510d6
     headers: {}
   response:
     status:
@@ -100,7 +57,50 @@ http_interactions:
       Server:
       - nginx/1.0.14
       Date:
-      - Wed, 03 Oct 2012 22:39:18 GMT
+      - Wed, 03 Oct 2012 23:29:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - '200'
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.15
+      Cache-Control:
+      - no-store
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"5e899e87b14129ae3a0b4045e60aa034"'
+      X-Request-Id:
+      - 86584ba26c5eca90804362c68b672f07
+      X-Runtime:
+      - '0.012294'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: US-ASCII
+      string: ! '{"access_token":"e83b007f75ad49d480303f892de884204b7864bc817f0fb547c9d87444c39a75","scope":"contacts,userinfo,contact_assignment,followup_comments,roles,organization_info"}'
+    http_version:
+  recorded_at: Wed, 03 Oct 2012 23:28:06 GMT
+- request:
+    method: post
+    uri: http://www.missionhub.com/api/v2/contacts.json
+    body:
+      encoding: US-ASCII
+      string: person[firstName]=Test&person[lastName]=User&person[gender]=female&person[current_address_attributes][address1]=123%20Somewhere%20St&person[current_address_attributes][address2]=Dept%202500&person[current_address_attributes][city]=Orlando&person[current_address_attributes][country]=US&person[current_address_attributes][state]=FL&person[current_address_attributes][zip]=32832&person[email_address][email]=mail%40google.com&person[email_address][primary]=0&person[phone_number][number]=021021021&person[phone_number][primary]=0&person[phone_number][location]=mobile&answers[4952]=Hello%20World&answers[4953]=R2&answers[4955]=D2&answers[4954][2]=C3&answers[4954][3]=C4&org_id=5522&user_id=1615180&access_token=e83b007f75ad49d480303f892de884204b7864bc817f0fb547c9d87444c39a75
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.0.14
+      Date:
+      - Wed, 03 Oct 2012 23:29:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -114,22 +114,21 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"3dcdd09d5cbaecb64214082017b4217f"'
+      - ! '"74011cce4197da546e01a09a5e8ce450"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _mh_session=442712f2622c96725ffa979ebf420216; path=/; expires=Fri, 05-Oct-2012
-        22:39:16 GMT; HttpOnly
-      - logged_in=true; path=/
+      - _mh_session=09142d775c25a060139eb5fabbdf1320; path=/; expires=Fri, 05-Oct-2012
+        23:28:37 GMT; HttpOnly
       X-Request-Id:
-      - fc4796e6abe7872a110570a706b0bf12
+      - cd61e19dd9bcef433ad39e1e8e8b02a6
       X-Runtime:
-      - '0.158785'
+      - '5.300431'
       X-Rack-Cache:
       - invalidate, pass
     body:
       encoding: US-ASCII
-      string: ! '{"id":2592834,"name":"Test User","assignment":{"assigned_to_person":[],"person_assigned_to":[]},"gender":"female","request_org_id":5522,"organizational_roles":[]}'
+      string: ! '{"meta":{"request_time":1349306917},"id":"1050"}'
     http_version:
-  recorded_at: Wed, 03 Oct 2012 22:38:08 GMT
+  recorded_at: Wed, 03 Oct 2012 23:28:13 GMT
 recorded_with: VCR 2.2.5

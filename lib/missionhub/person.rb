@@ -51,6 +51,18 @@ module MissionHub
       @current_address_attributes = address
     end
 
+    def phone
+      @phone_number[:number]
+    end
+
+    def phone=(phone)
+      unless phone.empty?
+        @phone_number = {:number => phone.gsub(/[^0-9]/, ""), :primary => 0, :location => "mobile"}
+      else
+        raise "Phone appears to be empty"
+      end
+    end
+
     def email_address
       @email_address[:email]
     end
@@ -93,7 +105,7 @@ module MissionHub
       self.instance_variables.each do |var|
         temp = self.instance_variable_get(var)
         if not temp.nil? and var.to_s != "@mx"
-          if temp.kind_of? MissionHub::Person::Address or temp.kind_of? MissionHub::Person::Phone
+          if temp.kind_of? MissionHub::Person::Address
             hash_to_return[var.to_s.gsub("@","")] = temp.hash
           else
             hash_to_return[var.to_s.gsub("@","")] = temp

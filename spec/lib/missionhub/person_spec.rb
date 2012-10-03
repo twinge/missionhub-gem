@@ -17,15 +17,9 @@ describe MissionHub::Person do
   end
 
   describe "Set Phone" do
-    it "must throw exception when phone is wrong type" do
-      phone_error = lambda { person.phone = '' }
-      phone_error.must_raise RuntimeError
-    end
-
     it "must be able to set phone" do
-      phone = MissionHub::Person::Phone.new
-      person.phone = phone
-      person.phone.must_equal phone
+      person.phone = "078556821"
+      person.phone.must_equal "078556821"
     end
   end
 
