@@ -33,7 +33,11 @@ module MissionHub
       person_hash.delete("answers")
       options = {:body => { :person => person_hash, :answers => person.answers, :org_id => MissionHub.org_id, :user_id => 1615180, :access_token => @access_token} }
       response = self.class.post('/api/v2/contacts.json', options)
-      response["id"].to_i
+      if !response.parsed_response['error'].nil?
+        raise response.parsed_response['error']
+      else
+        response.parsed_response['id'].to_i
+      end
     end
   end
 end

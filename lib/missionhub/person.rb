@@ -2,7 +2,7 @@ require 'resolv'
 
 module MissionHub
   class Person
-    attr_accessor :current_address_attributes, :phone_number, :email_address, :gender, :firstName, :lastName, :answers
+    attr_accessor :current_address_attributes, :phone_number, :email_address, :gender, :firstName, :lastName, :answers, :phone_number
 
     #align variable naming with MissionHub API
     alias :first_name= :firstName=
@@ -11,7 +11,15 @@ module MissionHub
     alias :last_name= :lastName=
     alias :last_name :lastName
 
+    alias :phone= :phone_number=
+    alias :phone :phone_number
+
     alias :address :current_address_attributes
+
+    def phone=(phone)
+      raise "Phone must be a MissionHub::Person::Phone" unless phone.kind_of? MissionHub::Person::Phone
+      @phone_number = phone
+    end
 
     def address=(address)
       raise "Address must be a MissionHub::Person::Address" unless address.kind_of? MissionHub::Person::Address
@@ -43,13 +51,17 @@ module MissionHub
       @current_address_attributes = address
     end
 
+    def email_address
+      @email_address[:email]
+    end
+
     def email_address=(email)
       unless email.empty?
         unless email =~ /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/
             raise "Email does not appear to be valid format"
         else
             raise "Email domain name appears to be incorrect" unless validate_email_domain(email)
-            @email_address = email
+            @email_address = {:email => email, :primary => 0}
         end
       else
         raise "Email appears to be empty"
@@ -81,10 +93,10 @@ module MissionHub
       self.instance_variables.each do |var|
         temp = self.instance_variable_get(var)
         if not temp.nil? and var.to_s != "@mx"
-          if not temp.kind_of? MissionHub::Person::Address
-            hash_to_return[var.to_s.gsub("@","")] = temp
-          else
+          if temp.kind_of? MissionHub::Person::Address or temp.kind_of? MissionHub::Person::Phone
             hash_to_return[var.to_s.gsub("@","")] = temp.hash
+          else
+            hash_to_return[var.to_s.gsub("@","")] = temp
           end
         end
       end

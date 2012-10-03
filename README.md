@@ -5,7 +5,7 @@ Consume the MissionHub API easily with this Ruby Gem
 
 Add this line to your application's Gemfile:
 
-    gem 'missionhub'
+    gem 'MissionHub'
 
 And then execute:
 
@@ -13,7 +13,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install missionhub
+    $ gem install MissionHub
 
 ## Usage
 

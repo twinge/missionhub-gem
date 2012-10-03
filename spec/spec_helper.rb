@@ -16,7 +16,6 @@ Turn.config do |c|
 end
 
 MissionHub.config do |c|
-  # :outline  - turn's original case/test outline mode [default]
   c.base_uri = 'http://www.missionhub.com/'
   c.client_id = 12
   c.client_secret = '83f84763001c1fb4ce96adc4908b9ba285b510d6'
