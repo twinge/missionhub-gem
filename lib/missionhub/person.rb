@@ -31,7 +31,7 @@ module MissionHub
         @answers = Hash.new
       end
 
-      if message.is_a?(String) or message.is_a?(Hash)
+      if message.is_a?(String) or message.is_a?(Hash) or message.is_a?(Array)
         if id.is_a?(Integer)
           @answers[id] = message
         else
