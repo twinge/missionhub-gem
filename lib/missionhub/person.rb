@@ -34,7 +34,13 @@ module MissionHub
       if message.is_a?(String) or message.is_a?(Hash) or message.is_a?(Array)
         if id.is_a?(Integer)
           if message.is_a?(Array)
-            message = Hash[ *message.collect { |v| [ v, v ] }.flatten ]
+            h = {}
+            count = 0
+            message.each do |v|
+              h[count] = v
+              count += 1
+            end
+            message = h
           end
           @answers[id] = message
         else
