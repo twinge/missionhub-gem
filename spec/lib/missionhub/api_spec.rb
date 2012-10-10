@@ -83,6 +83,8 @@ describe MissionHub::API do
       person.set_answer(4955, "D2")
       hash_answer = {"2" => "C3", "3" => "C4"}
       person.set_answer(4954, hash_answer)
+      array_answer = ["","C3","C4"]
+      person.set_answer(4954, array_answer)
       person.phone = "021021021"
       response = api.create_person(person)
       response.must_be_instance_of Hash

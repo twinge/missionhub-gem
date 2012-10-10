@@ -40,7 +40,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"error":"invalid_client","error_description":"{\"error\": {\"message\":\"Client
         ID and client secret do not match.\", \"code\": \"52\"}}"}'
-    http_version:
+    http_version: 
   recorded_at: Wed, 03 Oct 2012 23:28:06 GMT
 - request:
     method: post
@@ -83,7 +83,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"access_token":"e83b007f75ad49d480303f892de884204b7864bc817f0fb547c9d87444c39a75","scope":"contacts,userinfo,contact_assignment,followup_comments,roles,organization_info"}'
-    http_version:
+    http_version: 
   recorded_at: Wed, 03 Oct 2012 23:28:06 GMT
 - request:
     method: post
@@ -129,6 +129,34 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"meta":{"request_time":1349306917},"id":"1050"}'
-    http_version:
+    http_version: 
   recorded_at: Wed, 03 Oct 2012 23:28:13 GMT
+- request:
+    method: post
+    uri: http://www.missionhub.com/api/v2/contacts.json
+    body:
+      encoding: US-ASCII
+      string: person[firstName]=Test&person[lastName]=User&person[gender]=female&person[current_address_attributes][address1]=123%20Somewhere%20St&person[current_address_attributes][address2]=Dept%202500&person[current_address_attributes][city]=Orlando&person[current_address_attributes][country]=US&person[current_address_attributes][state]=FL&person[current_address_attributes][zip]=32832&person[email_address][email]=mail%40google.com&person[email_address][primary]=0&person[phone_number][number]=021021021&person[phone_number][primary]=0&person[phone_number][location]=mobile&answers[4952]=Hello%20World&answers[4953]=R2&answers[4955]=D2&answers[4954][]=&answers[4954][C3]=C3&answers[4954][C4]=C4&org_id=5522&user_id=1615180&access_token=e83b007f75ad49d480303f892de884204b7864bc817f0fb547c9d87444c39a75
+    headers: {}
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Server:
+      - nginx/1.0.14
+      Date:
+      - Wed, 10 Oct 2012 00:41:41 GMT
+      Content-Type:
+      - text/html
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '172'
+    body:
+      encoding: US-ASCII
+      string: ! "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n<hr><center>nginx/1.2.2</center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Wed, 10 Oct 2012 00:40:14 GMT
 recorded_with: VCR 2.2.5

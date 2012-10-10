@@ -33,6 +33,9 @@ module MissionHub
 
       if message.is_a?(String) or message.is_a?(Hash) or message.is_a?(Array)
         if id.is_a?(Integer)
+          if message.is_a?(Array)
+            message = Hash[ *message.collect { |v| [ v, v ] }.flatten ]
+          end
           @answers[id] = message
         else
           raise "Invalid type for id"

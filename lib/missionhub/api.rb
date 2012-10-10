@@ -12,10 +12,6 @@ module MissionHub
       self.class.base_uri MissionHub.base_uri
     end
 
-    def debug
-      debug_output $stderr
-    end
-
     def auth
       options = {:body => { :grant_type => 'none', :client_id => MissionHub.client_id, :client_secret => MissionHub.client_secret } }
       response = self.class.post('/oauth/access_token', options)
