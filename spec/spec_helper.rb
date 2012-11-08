@@ -16,9 +16,9 @@ Turn.config do |c|
 end
 
 MissionHub.config do |c|
-  c.base_uri = 'http://www.missionhub.com/'
+  c.base_uri = 'http://stage.missionhub.com/'
   c.client_id = 12
-  c.client_secret = '83f84763001c1fb4ce96adc4908b9ba285b510d6'
+  c.client_secret = '33f84763tasf9c1fb4ce96adc4908b9ba285b510d0'
   c.org_id = 5522
 end
 

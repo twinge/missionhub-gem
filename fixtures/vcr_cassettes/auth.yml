@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://www.missionhub.com/oauth/access_token
+    uri: http://stage.missionhub.com/oauth/access_token
     body:
       encoding: US-ASCII
       string: grant_type=none&client_id=12&client_secret=
@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - nginx/1.0.14
       Date:
-      - Wed, 03 Oct 2012 23:29:16 GMT
+      - Thu, 08 Nov 2012 13:49:26 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -31,9 +31,9 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Request-Id:
-      - 7b1ff696190f4c801aff3c9d946d59ff
+      - 19536bac31ccee8569a1bdae781b7648
       X-Runtime:
-      - '0.004363'
+      - '0.123355'
       X-Rack-Cache:
       - invalidate, pass
     body:
@@ -41,13 +41,13 @@ http_interactions:
       string: ! '{"error":"invalid_client","error_description":"{\"error\": {\"message\":\"Client
         ID and client secret do not match.\", \"code\": \"52\"}}"}'
     http_version: 
-  recorded_at: Wed, 03 Oct 2012 23:28:06 GMT
+  recorded_at: Thu, 08 Nov 2012 13:47:09 GMT
 - request:
     method: post
-    uri: http://www.missionhub.com/oauth/access_token
+    uri: http://stage.missionhub.com/oauth/access_token
     body:
       encoding: US-ASCII
-      string: grant_type=none&client_id=12&client_secret=83f84763001c1fb4ce96adc4908b9ba285b510d6
+      string: grant_type=none&client_id=12&client_secret=33f84763tasf9c1fb4ce96adc4908b9ba285b510d0
     headers: {}
   response:
     status:
@@ -57,7 +57,7 @@ http_interactions:
       Server:
       - nginx/1.0.14
       Date:
-      - Wed, 03 Oct 2012 23:29:16 GMT
+      - Thu, 08 Nov 2012 13:49:27 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -73,24 +73,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"5e899e87b14129ae3a0b4045e60aa034"'
+      - ! '"587793cf9f81936d3aa19ce565ea19cf"'
       X-Request-Id:
-      - 86584ba26c5eca90804362c68b672f07
+      - aae32e7e7ecd9ee631f7e24d277b0778
       X-Runtime:
-      - '0.012294'
+      - '0.047424'
       X-Rack-Cache:
       - invalidate, pass
     body:
       encoding: US-ASCII
-      string: ! '{"access_token":"e83b007f75ad49d480303f892de884204b7864bc817f0fb547c9d87444c39a75","scope":"contacts,userinfo,contact_assignment,followup_comments,roles,organization_info"}'
+      string: ! '{"access_token":"526bba947bfeb5a7d60206c75983dcf30aee5a68ef7bc7479c7a151cdce3c7e8","scope":"contacts,userinfo,contact_assignment,followup_comments,roles,organization_info"}'
     http_version: 
-  recorded_at: Wed, 03 Oct 2012 23:28:06 GMT
+  recorded_at: Thu, 08 Nov 2012 13:47:10 GMT
 - request:
     method: post
-    uri: http://www.missionhub.com/api/v2/contacts.json
+    uri: http://stage.missionhub.com/api/v2/contacts.json
     body:
       encoding: US-ASCII
-      string: person[first_name]=Test&person[last_name]=User&person[gender]=female&person[current_address_attributes][address1]=123%20Somewhere%20St&person[current_address_attributes][address2]=Dept%202500&person[current_address_attributes][city]=Orlando&person[current_address_attributes][country]=US&person[current_address_attributes][state]=FL&person[current_address_attributes][zip]=32832&person[email_address][email]=mail%40google.com&person[email_address][primary]=0&person[phone_number][number]=021021021&person[phone_number][primary]=0&person[phone_number][location]=mobile&answers[4952]=Hello%20World&answers[4953]=R2&answers[4955]=D2&answers[4954][2]=C3&answers[4954][3]=C4&org_id=5522&user_id=1615180&access_token=e83b007f75ad49d480303f892de884204b7864bc817f0fb547c9d87444c39a75
+      string: person[first_name]=Test&person[last_name]=User&person[gender]=female&person[current_address_attributes][address1]=123%20Somewhere%20St&person[current_address_attributes][address2]=Dept%202500&person[current_address_attributes][city]=Orlando&person[current_address_attributes][country]=US&person[current_address_attributes][state]=FL&person[current_address_attributes][zip]=32832&person[email_address][email]=mail%40google.com&person[email_address][primary]=0&person[phone_number][number]=021021021&person[phone_number][primary]=0&person[phone_number][location]=mobile&answers[4952]=Hello%20World&answers[4953]=R2&answers[4955]=D2&answers[4954][0]=&answers[4954][1]=C3&answers[4954][2]=C4&org_id=5522&user_id=1615180&access_token=526bba947bfeb5a7d60206c75983dcf30aee5a68ef7bc7479c7a151cdce3c7e8
     headers: {}
   response:
     status:
@@ -100,7 +100,7 @@ http_interactions:
       Server:
       - nginx/1.0.14
       Date:
-      - Wed, 03 Oct 2012 23:29:23 GMT
+      - Thu, 08 Nov 2012 13:49:28 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -114,49 +114,22 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"74011cce4197da546e01a09a5e8ce450"'
+      - ! '"e081d0440636fc4cf4a95aa23fc06f6b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _mh_session=09142d775c25a060139eb5fabbdf1320; path=/; expires=Fri, 05-Oct-2012
-        23:28:37 GMT; HttpOnly
+      - _mh_session=d3e7b5065853a46631c59b937c6674de; path=/; expires=Sat, 10-Nov-2012
+        13:50:24 GMT; HttpOnly
+      - logged_in=true; path=/
       X-Request-Id:
-      - cd61e19dd9bcef433ad39e1e8e8b02a6
+      - d27fa3266be6e14b41b311a106a38ee0
       X-Runtime:
-      - '5.300431'
+      - '0.195808'
       X-Rack-Cache:
       - invalidate, pass
     body:
       encoding: US-ASCII
-      string: ! '{"meta":{"request_time":1349306917},"id":"1050"}'
+      string: ! '{"id":2592834,"name":"Test User","assignment":{"assigned_to_person":[],"person_assigned_to":[]},"gender":"Female","status":"uncontacted","request_org_id":5522,"organizational_roles":[]}'
     http_version: 
-  recorded_at: Wed, 03 Oct 2012 23:28:13 GMT
-- request:
-    method: post
-    uri: http://www.missionhub.com/api/v2/contacts.json
-    body:
-      encoding: US-ASCII
-      string: person[first_name]=Test&person[last_name]=User&person[gender]=female&person[current_address_attributes][address1]=123%20Somewhere%20St&person[current_address_attributes][address2]=Dept%202500&person[current_address_attributes][city]=Orlando&person[current_address_attributes][country]=US&person[current_address_attributes][state]=FL&person[current_address_attributes][zip]=32832&person[email_address][email]=mail%40google.com&person[email_address][primary]=0&person[phone_number][number]=021021021&person[phone_number][primary]=0&person[phone_number][location]=mobile&answers[4952]=Hello%20World&answers[4953]=R2&answers[4955]=D2&answers[4954][]=&answers[4954][C3]=C3&answers[4954][C4]=C4&org_id=5522&user_id=1615180&access_token=e83b007f75ad49d480303f892de884204b7864bc817f0fb547c9d87444c39a75
-    headers: {}
-  response:
-    status:
-      code: 502
-      message: Bad Gateway
-    headers:
-      Server:
-      - nginx/1.0.14
-      Date:
-      - Wed, 10 Oct 2012 00:41:41 GMT
-      Content-Type:
-      - text/html
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '172'
-    body:
-      encoding: US-ASCII
-      string: ! "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>502
-        Bad Gateway</h1></center>\r\n<hr><center>nginx/1.2.2</center>\r\n</body>\r\n</html>\r\n"
-    http_version: 
-  recorded_at: Wed, 10 Oct 2012 00:40:14 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Thu, 08 Nov 2012 13:47:11 GMT
+recorded_with: VCR 2.3.0
