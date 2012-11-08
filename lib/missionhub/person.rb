@@ -2,14 +2,7 @@ require 'resolv'
 
 module MissionHub
   class Person
-    attr_accessor :current_address_attributes, :phone_number, :email_address, :gender, :firstName, :lastName, :answers, :phone_number
-
-    #align variable naming with MissionHub API
-    alias :first_name= :firstName=
-    alias :first_name :firstName
-
-    alias :last_name= :lastName=
-    alias :last_name :lastName
+    attr_accessor :current_address_attributes, :phone_number, :email_address, :gender, :first_name, :last_name, :answers, :phone_number
 
     alias :phone= :phone_number=
     alias :phone :phone_number
@@ -106,7 +99,7 @@ module MissionHub
     end
 
     def full_name
-      @firstName + " " + @lastName
+      @first_name + " " + @last_name
     end
 
     def hash
