@@ -1,3 +1,3 @@
 module MissionHub
-  VERSION = "1.0rc9"
+  VERSION = "2.0.0"
 end
