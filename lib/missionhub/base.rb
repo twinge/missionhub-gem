@@ -1,6 +1,5 @@
 module MissionHub
   class Base < ActiveResource::Base
-    self.site = "https://www.missionhub.com/apis/v3"
 
     def self.connection(refresh = false)
       if defined?(@connection) || superclass == Object

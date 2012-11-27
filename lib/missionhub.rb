@@ -3,13 +3,16 @@ Dir[File.dirname(__FILE__) + '/missionhub/*.rb'].each do |file|
 end
 
 module MissionHub
-  extend self
+  class << self
+    attr_accessor :client_id, :client_secret, :site
 
-  attr_accessor :client_id, :client_secret
+    # And we define a wrapper for the configuration block, that we'll use to set up
+    # our set of options
+    def config
+      yield self
 
-  # And we define a wrapper for the configuration block, that we'll use to set up
-  # our set of options
-  def config(&block)
-    instance_eval(&block)
+      self.site ||= "https://www.missionhub.com/apis/v3"
+      Base.site = site
+    end
   end
 end
