@@ -1,3 +1,5 @@
+require File.dirname(__FILE__) + '/missionhub/base.rb'
+
 Dir[File.dirname(__FILE__) + '/missionhub/*.rb'].each do |file|
   require file
 end
