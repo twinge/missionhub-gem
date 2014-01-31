@@ -6,7 +6,7 @@ end
 
 module MissionHub
   class << self
-    attr_accessor :client_id, :client_secret, :site
+    attr_accessor :client_id, :client_secret, :site, :verbose
 
     # And we define a wrapper for the configuration block, that we'll use to set up
     # our set of options
