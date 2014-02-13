@@ -20,6 +20,9 @@ module MissionHub
 
     def request(method, path, *arguments)
       puts "MissionHub::request method #{method} path #{path} args #{arguments}" if MissionHub.verbose
+      if ENV['mhdebug'] == 'true'
+        byebug
+      end
       result = ActiveSupport::Notifications.instrument("request.active_resource") do |payload|
         path = add_secret_to_path(path)
         payload[:method]      = method
