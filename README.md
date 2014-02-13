@@ -25,7 +25,7 @@ But when I go to http://www.missionhub.com/profile/2856753 I see no labels assig
 
 Seems you need to include another param parallel to organizational_lable, otherwise rails for some reason just behaves as if you passed the inner attributes hash.  This works:
 
-    ol = MissionHub::OrganizationalLabel.create "organizational_label" => { :person_id => 2856753, :label_id => leader_id, :added_by_id => 778531 }
+    ol = MissionHub::OrganizationalLabel.create "a" => "b", "organizational_label" => { :person_id => 2856753, :label_id => leader_id, :added_by_id => 778531 }
 
 ## Installation
 
