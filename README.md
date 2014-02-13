@@ -14,10 +14,8 @@ Create Label
 
     # test leader label
     #FN LN Test person id 2856753
-    #Andrew's person id 778531
     leader_id = MissionHub::Label.all.detect{ |l| l.name == "Leader" }.id
-
-    ol = MissionHub::OrganizationalLabel.create :person_id => 2856753, :label_id => leader_id, :added_by_id => 778531
+    ol = MissionHub::OrganizationalLabel.create :person_id => 2856753, :label_id => leader_id
 
 But when I go to http://www.missionhub.com/profile/2856753 I see no labels assigned still.  Then I tried
 
