@@ -1,6 +1,32 @@
 # MissionHub Ruby Gem [![Build Status](https://secure.travis-ci.org/Godmedia/missionhub-gem.png)](http://travis-ci.org/Godmedia/missionhub-gem) [![Dependency Status](https://gemnasium.com/Godmedia/missionhub-gem.png)](https://gemnasium.com/Godmedia/missionhub-gem) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/Godmedia/missionhub-gem)
 Consume the MissionHub API easily with this Ruby Gem
 
+## Examples
+
+Create Person
+
+    # visitor
+    MissionHub::Person.create(:permissions => 2, :person => {:first_name => "FN", :last_name => "LN", :email => "test2@test.com"})
+    # operator
+    MissionHub::Person.create(:permissions => 4, :person => {:first_name => "FN", :last_name => "LN", :email => "test2@test.com"})
+
+Create Label
+
+    # test leader label
+    #FN LN Test person id 2856753
+    #Andrew's person id 778531
+    leader_id = MissionHub::Label.all.detect{ |l| l.name == "Leader" }.id
+
+    ol = MissionHub::OrganizationalLabel.create :person_id => 2856753, :label_id => leader_id, :added_by_id => 778531
+
+But when I go to http://www.missionhub.com/profile/2856753 I see no labels assigned still.  Then I tried
+
+    ol = MissionHub::OrganizationalLabel.create "organizational_label" => { :person_id => 2856753, :label_id => leader_id, :added_by_id => 778531 }
+
+Seems you need to include another param parallel to organizational_lable, otherwise rails for some reason just behaves as if you passed the inner attributes hash.  This works:
+
+    ol = MissionHub::OrganizationalLabel.create "organizational_label" => { :person_id => 2856753, :label_id => leader_id, :added_by_id => 778531 }
+
 ## Installation
 
 Add this line to your application's Gemfile:
